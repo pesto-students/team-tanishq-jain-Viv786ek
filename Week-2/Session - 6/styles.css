@@ -1,0 +1,27 @@
+h1{
+    text-align: center;
+}
+#board{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3,100px);
+    grid-template-rows: repeat(3, 100px);
+    grid-gap: 10px;
+}
+
+#boxes{
+    border: 1px solid skyblue;
+    text-align: center;
+}
+
+.x{
+    font-size: 60px;
+    color: red;
+    padding: 15px;
+}
+
+.o {
+    font-size: 60px;
+    color:blue;
+    padding: 15px;
+}

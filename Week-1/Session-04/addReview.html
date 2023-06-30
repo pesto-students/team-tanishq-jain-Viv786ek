@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      .checked {
+        color: orange;
+        font-size: 24px;
+      }
+    </style>
+    <title>Add Review</title>
+  </head>
+  <body>
+    <header>
+      <h1>Restaurant Reviews</h1>
+      <nav>
+        <a href="index.html">Home</a> &nbsp;
+        <a href="addReview.html">Add Review</a> &nbsp;
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+    <br />
+    <!-- Add Review  -->
+    <section>
+      <form>
+        <h2>Add Review</h2>
+        <label for="name">Name?</label>
+        <input type="text" id="name" /> <br />
+        <br />
+        <label for="restaurant">Restaurant?</label>
+        <select name="restaurant" id="restaurant">
+          <option value="select">Choose one...</option>
+          <option value="main street cafe">Main Street Cafe</option>
+          <option value="greek house">Greek House</option>
+        </select>
+        <br />
+        <br />
+        <label for="date">Date of visit?</label>
+        <input type="date" id="date" /> <br />
+        <br />
+        <label for="rating">Rating?</label>
+        <input type="number" id="rating" min="1" />
+        <br />
+        <br />
+        <label for="details">Details?</label>
+        <textarea id="'details" rows="5" cols="30"></textarea> <br />
+        <br />
+        <input type="submit" value="Submit" />
+      </form>
+    </section>
+    <br />
+
+    <footer>&copy; 2022 Restaurant Reviews</footer>
+  </body>
+</html>
