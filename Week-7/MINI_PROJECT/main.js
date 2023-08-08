@@ -1,5 +1,5 @@
 // OpenAI API credentials
-const API_KEY = "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";
+// const API_KEY = "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";
 const sendBtn = document.querySelector("#generate-btn");
 const inputElement = document.querySelector("#user-input");
 const imageSection = document.querySelector("#generate-image")
@@ -25,7 +25,7 @@ const getImages = async () => {
   };
 
   try {
-    const response = await fetch('https://api.openai.com/v1/images/generations', options);
+    // const response = await fetch('https://api.openai.com/v1/images/generations', options);
     const imageData = await response.json();
     console.log('Received data:', imageData); // Display the received data 
     imageData?.data.forEach(imageObject =>{
