@@ -1,0 +1,19 @@
+The ACID properties are a set of key principles that guarantee the reliability and consistency of database transactions. ACID is an acronym that stands for Atomicity, Consistency, Isolation, and Durability. These properties are essential in ensuring that database transactions are processed correctly, even in the presence of system failures or concurrent access by multiple users. Here's an explanation of each of the ACID properties:
+
+Atomicity:
+
+Atomicity ensures that a database transaction is treated as a single, indivisible unit of work. It means that either all the operations within a transaction are completed successfully, or none of them are applied.
+If any part of a transaction fails (e.g., due to an error or an exception), the entire transaction is rolled back to its original state, ensuring that the database remains consistent.
+Consistency:
+
+The consistency property ensures that a transaction brings the database from one consistent state to another consistent state. It enforces integrity constraints, ensuring that the data remains in a valid and expected state.
+The database should satisfy all defined rules and constraints before and after a transaction. If a transaction violates any constraints, it is rolled back, and no changes are applied to the database.
+Isolation:
+
+Isolation ensures that multiple concurrent transactions do not interfere with each other. Each transaction appears to be isolated from others, meaning that one transaction should not see the partial or intermediate results of another transaction.
+Isolation is important to prevent issues like data corruption, dirty reads, and inconsistent results when multiple users are simultaneously accessing the database. Different isolation levels, such as Read Uncommitted, Read Committed, Repeatable Read, and Serializable, provide varying levels of isolation.
+Durability:
+
+Durability guarantees that once a transaction is committed (successfully completed), its changes are permanent and will survive any subsequent system failures, such as power outages or crashes.
+To achieve durability, database management systems typically write transaction changes to a durable storage medium, like a disk, and maintain a transaction log. This ensures that even in the event of a system failure, the database can be restored to its state just before the failure and replay committed transactions from the log to recover any lost data.
+The ACID properties collectively provide a strong framework for ensuring data integrity, consistency, and reliability in database systems. These properties are critical in a wide range of applications, from financial systems to e-commerce platforms, where data accuracy and reliability are paramount. However, it's important to note that adhering strictly to ACID properties can sometimes result in performance trade-offs, especially in systems with high concurrency requirements, leading to the development of alternative database models like NoSQL databases that prioritize other characteristics like scalability and flexibility.

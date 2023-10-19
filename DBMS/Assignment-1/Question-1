@@ -1,0 +1,53 @@
+To normalize the given table to 1NF, 2NF, and 3NF, we need to identify and remove any data redundancy and ensure that each piece of data is stored in a way that minimizes duplication. The normalization process is typically achieved through decomposition and the creation of separate tables.
+
+Here's how we can normalize the table:
+
+Original Table (Unnormalized):
+
+Book ID	Title	Author	Genre	Publisher	ISBN	Price
+101	To Kill a Mockingbird	Harper Lee	Fiction	HarperCollins	978-0061120084	10.99
+102	The Great Gatsby	F. Scott Fitzgerald	Fiction	Scribner	978-0743273565	12.50
+103	Principles of Physics	Jearl Walker	Science	Wiley	978-0321976444	50.00
+1NF (First Normal Form):
+In 1NF, we ensure that each column contains only atomic (indivisible) values and that each row is uniquely identifiable. The table is already in 1NF as it contains atomic values, and each row is uniquely identifiable by the Book ID.
+
+2NF (Second Normal Form):
+To achieve 2NF, we need to eliminate partial dependencies. For this, we first need to identify the candidate key(s) of the table. The candidate key(s) can be determined based on functional dependencies. In this case, it's reasonable to assume that the ISBN is a candidate key because it uniquely identifies each book.
+
+So, we create two tables:
+
+Table 1: Books
+
+ISBN	           Title	                Author	                 Genre	      Price
+978-0061120084	|  To Kill a Mockingbird |	Harper Lee	          |  Fiction	|  10.99
+978-0743273565	|  The Great Gatsby	     |  F. Scott Fitzgerald	  |  Fiction	|  12.50
+978-0321976444	|  Principles of Physics |	Jearl Walker	      |  Science	|  50.00
+
+
+Table 2: Publishers
+
+ISBN	          |  Publisher
+978-0061120084	  |  HarperCollins
+978-0743273565	  |  Scribner
+978-0321976444	  |  Wiley
+
+
+In this step, we have removed partial dependencies by creating a separate table for books and a separate table for publishers. Now, the table is in 2NF.
+
+3NF (Third Normal Form):
+To achieve 3NF, we need to eliminate transitive dependencies. In this case, the "Publisher" column depends on "ISBN," which is a non-prime attribute (not part of the candidate key).
+
+So, we create a third table:
+
+
+Table 3: Genres
+
+Genre	|  Description
+Fiction	| Fiction novels
+Science	|  Science books
+
+
+
+Now, our database is in 3NF. The "Publisher" column, which was transitively dependent on "ISBN," is now dependent only on the "Genre" in the new "Genres" table.
+
+This normalization process ensures data integrity, minimizes redundancy, and makes it easier to maintain and update the database.

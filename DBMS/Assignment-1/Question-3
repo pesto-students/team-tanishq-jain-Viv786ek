@@ -1,0 +1,23 @@
+Primary keys and foreign keys are essential components in a relational database that establish relationships between tables. They help maintain data integrity and enforce referential integrity in the database, ensuring that the data is organized and related correctly. Here's an explanation of both primary keys and foreign keys and how they establish relationships between tables:
+
+Primary Key:
+
+A primary key is a unique identifier for each record (row) in a database table. It ensures that each row in the table can be uniquely identified.
+A primary key can consist of one or multiple columns in the table. However, the combination of values in these columns must be unique.
+Primary keys prevent duplicate or null values in the key columns, ensuring data integrity.
+A primary key is typically defined when creating a table and is used as the basis for establishing relationships with other tables.
+Foreign Key:
+
+A foreign key is a field or a set of fields in a table that is used to establish a link between two tables. It creates a relationship between the data in one table (the "child" table) and the data in another table (the "parent" table).
+The foreign key in the child table references the primary key in the parent table, indicating that there's a connection between the two tables.
+Foreign keys help maintain referential integrity by ensuring that the data in the child table matches values in the parent table's primary key.
+If a foreign key is defined in a child table, it can enforce constraints, such as preventing the insertion of records with non-matching values, cascading updates, or cascading deletes.
+Establishing Relationships between Tables:
+
+One-to-One Relationship: In this relationship, a primary key in one table relates to a unique value in the primary key of another table. A foreign key is used to connect the two tables. For example, you might have a table of employees with a primary key (e.g., EmployeeID), and a separate table for employee contact details with a foreign key (e.g., EmployeeID) referencing the primary key in the employee table.
+
+One-to-Many Relationship: In this relationship, one record in the parent table can be associated with multiple records in the child table. The primary key in the parent table is referenced by the foreign key in the child table. For example, a customer can have multiple orders. The primary key (e.g., CustomerID) in the customer table is linked to a foreign key (e.g., CustomerID) in the order table.
+
+Many-to-Many Relationship: This type of relationship is established using a junction table that includes two foreign keys, each referencing a different table's primary key. It's used when multiple records in one table can be associated with multiple records in another table. For example, a student can enroll in multiple courses, and each course can have multiple students. A junction table links the student and course tables through their primary keys.
+
+These primary key and foreign key relationships are crucial for ensuring data consistency, integrity, and accurate retrieval of related information in a relational database.
